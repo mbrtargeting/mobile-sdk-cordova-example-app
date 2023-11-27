@@ -1,0 +1,7 @@
+{
+  "name": "mobile-sdk-cordova-example-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
