@@ -9,14 +9,16 @@ declare var cordova: any;
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  private static readonly INTERSTITIAL_SLOT = "interstitial";
 
   constructor() {}
 
-  getAd() {
-    cordova.plugins.StroeerAdsPlugin.getInterstitial(() => {
+  async getAd() {
+    try {
+      await cordova.plugins.StroeerAdsPlugin.getInterstitial(Tab3Page.INTERSTITIAL_SLOT)
       console.log('Excelsior!');
-    }, (err: unknown) => {
-      console.log('Uh oh... ' + err);
-    });
+    } catch (error: unknown) {
+      console.log('Uh oh... ' + error);
+    }
   }
 }
