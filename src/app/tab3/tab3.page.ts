@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 declare var cordova: any;
 
-
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
