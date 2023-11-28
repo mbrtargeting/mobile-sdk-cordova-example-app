@@ -4,12 +4,12 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "lint": "ng lint"
+    "rm-plugin": "cordova plugin remove cordova-plugin-stroeer-ads-plugin",
+    "link-plugin": "cordova plugin add ../mobile-sdk-cordova-plugin --link --verbose",
+    "prepare:android": "cordova prepare platform android",
+    "run:android": "ionic cordova run android",
+    "clear-plugin-cache": "rm -rf ./platforms && rm -rf ./plugins",
+    "buildnrun:android": "npm run clear-plugin-cache && npm run run:android"
   },
   "private": true,
   "dependencies": {
