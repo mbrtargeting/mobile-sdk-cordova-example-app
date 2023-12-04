@@ -23,6 +23,8 @@
     "@angular/router": "^14.2.9",
     "@ionic/angular": "^7.0.0",
     "@ionic/cordova-builders": "^10.0.0",
+    "admob-plus-cordova": "2.0.0-alpha.13",
+    "admob-plus-cordova-webview-ad": "0.2.8",
     "cordova-android": "12.0.0",
     "cordova-ios": "6.3.0",
     "ionicons": "^7.0.0",
@@ -72,7 +74,13 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-stroeer-ads-plugin": {}
+      "cordova-plugin-stroeer-ads-plugin": {},
+      "admob-plus-cordova": {
+        "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
+        "APP_ID_IOS": "ca-app-pub-3940256099942544~3347511713",
+        "PLAY_SERVICES_VERSION": "22.5.0"
+      },
+      "admob-plus-cordova-webview-ad": {}
     },
     "platforms": [
       "ios",

@@ -17,6 +17,16 @@
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+  <script type="text/javascript" src="https://cdn.stroeerdigitalgroup.de/metatag/libraries/cmp-mock.js"></script>
+  <script>
+    createCmpStub();
+    console.log('CmpStub installed', !!window.__tcfapi);
+  </script>
+  <script>
+    var cmpMock = createCmpMock({cmpId: 6, acceptAll: true, uiVisible: false});
+    cmpMock.isReady().then(() => console.log('CmpMock ready'));
+  </script>
 </head>
 
 <body>
