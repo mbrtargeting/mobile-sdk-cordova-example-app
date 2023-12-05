@@ -24,7 +24,8 @@
         <preference name="AdMobPlusWebViewAd" value="true" />
         <preference name="AdMobPlusOverrideUrlLoading" value="true" />
         <preference name="GradlePluginKotlinEnabled" value="true" />
-        <preference name="GradlePluginKotlinVersion" value="1.9.0" />
+        <preference name="GradlePluginKotlinCodeStyle" value="official" />
+        <preference name="GradlePluginKotlinVersion" value="1.7.21" />
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
             <application android:networkSecurityConfig="@xml/network_security_config" />
         </edit-config>
@@ -50,6 +51,8 @@
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <platform name="ios">
+        <preference name="deployment-target" value="12.0" />
+        <preference name="SwiftVersion" value="5.3" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />

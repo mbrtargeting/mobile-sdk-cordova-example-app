@@ -7,9 +7,12 @@
     "rm-plugin": "cordova plugin remove cordova-plugin-stroeer-ads-plugin",
     "link-plugin": "cordova plugin add ../mobile-sdk-cordova-plugin --link --verbose",
     "prepare:android": "cordova prepare platform android",
+    "prepare:ios": "ionic cordova prepare ios",
     "run:android": "ionic cordova run android",
+    "run:ios": "ionic cordova run ios",
     "clear-plugin-cache": "rm -rf ./platforms && rm -rf ./plugins",
-    "buildnrun:android": "npm run clear-plugin-cache && npm run run:android"
+    "buildnrun:android": "npm run clear-plugin-cache && npm run run:android",
+    "buildnrun:ios": "npm run clear-plugin-cache && npm run run:ios"
   },
   "private": true,
   "dependencies": {
@@ -51,7 +54,6 @@
     "cordova-plugin-ionic-webview": "^5.0.0",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
-    "cordova-plugin-stroeer-ads-plugin": "file:../mobile-sdk-cordova-plugin",
     "eslint": "^7.26.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -74,11 +76,12 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-stroeer-ads-plugin": {},
       "admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-3940256099942544~3347511713",
         "APP_ID_IOS": "ca-app-pub-3940256099942544~3347511713",
-        "PLAY_SERVICES_VERSION": "22.5.0"
+        "PLAY_SERVICES_VERSION": "22.5.0",
+        "USAGE": "This identifier will be used to deliver personalized ads to you.",
+        "DISABLESDKCRASHREPORTING": "false"
       },
       "admob-plus-cordova-webview-ad": {}
     },
