@@ -27,6 +27,15 @@
     var cmpMock = createCmpMock({cmpId: 6, acceptAll: true, uiVisible: false});
     cmpMock.isReady().then(() => console.log('CmpMock ready'));
   </script>
+
+  <script>
+    window.SDG = window.SDG || {};
+    window.SDG.cmd = window.SDG.cmd || [];
+  </script>
+  <!-- THIS METATAG SCRIPT WORKS FOR ANDROID -->
+  <script async type="text/javascript" src="https://cdn-test.stroeerdev.de/metatag/preview/sdkTest/metaTag.min.js"></script>
+  <!-- THIS IS ACTUAL PRODUCTION TRANSFERMARKET METATAG SCRIPT THAT WORKS FOR IOS BUT NOT FOR ANDROID -->
+  <!-- <script async type="text/javascript" src="https://cdn.stroeerdigitalgroup.de/metatag/live/transfermarkt.de_android/metaTag.min.js"></script> -->
 </head>
 
 <body>

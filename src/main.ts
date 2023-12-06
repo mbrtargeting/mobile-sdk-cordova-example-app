@@ -28,22 +28,5 @@ platformBrowserDynamic()
 function onDeviceRead() {
   document.addEventListener('deviceready', async () => {
     await admob.start(); // or start loading ads
-    initiateMetatag()
   });
-}
-
-function initiateMetatag() {
-  const initSdgScript = document.createElement('script');
-  initSdgScript.type = 'text/javascript'
-  initSdgScript.innerHTML = `
-    window.SDG = window.SDG || {};
-    window.SDG.cmd = window.SDG.cmd || [];
-  `;
-  document.head.appendChild(initSdgScript);
-
-  const script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.async = true;
-  script.src = 'https://cdn.stroeerdigitalgroup.de/metatag/live/transfermarkt.de_android/metaTag.min.js';
-  document.head.appendChild(script);
 }

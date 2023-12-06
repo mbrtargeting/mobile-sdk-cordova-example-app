@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Metatag Ad
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Metatag Ad</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button expand="full" (click)="showMetatagDebug()">SDG Debug</ion-button>
+
+  <app-ad [slot]="'topmobile'"></app-ad>
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam cum totam natus libero quia molestiae rerum voluptate! Cupiditate, repellat reiciendis laboriosam in quidem illum incidunt pariatur, esse optio odio maiores.</p>
+  
+  <app-ad [slot]="'topmobile2'"></app-ad>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam cum totam natus libero quia molestiae rerum voluptate! Cupiditate, repellat reiciendis laboriosam in quidem illum incidunt pariatur, esse optio odio maiores.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam cum totam natus libero quia molestiae rerum voluptate! Cupiditate, repellat reiciendis laboriosam in quidem illum incidunt pariatur, esse optio odio maiores.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam cum totam natus libero quia molestiae rerum voluptate! Cupiditate, repellat reiciendis laboriosam in quidem illum incidunt pariatur, esse optio odio maiores.</p>
+
+  <app-ad [slot]="'topmobile3'"></app-ad>
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam cum totam natus libero quia molestiae rerum voluptate! Cupiditate, repellat reiciendis laboriosam in quidem illum incidunt pariatur, esse optio odio maiores.</p>
+
+  <app-ad [slot]="'stickyfooter'"></app-ad>
+</ion-content>

@@ -1,18 +1,30 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, Input, ViewChild } from "@angular/core";
 
 declare var SDG: Sdg;
+
+enum AdSlot {
+    TOPMOBILE = "topmobile",
+    TOPMOBILE2 = "topmobile2",
+    TOPMOBILE3 = "topmobile3",
+    STICKYFOOTER = "stickyfooter"
+}
 
 @Component({
     selector: 'app-ad',
     template: `
         <div #ad></div>
-        <ion-button (click)="reload()">Reload Ad</ion-button>
+        <ion-button *ngIf="slot !== adSlotEnum.STICKYFOOTER" (click)="reload()">Reload Ad</ion-button>
     `,
     styleUrls: []
 })
 export class AdComponent {
     @ViewChild('ad')
     adEl: ElementRef | undefined;
+
+    @Input()
+    public slot: string = AdSlot.TOPMOBILE;
+
+    public adSlotEnum = AdSlot;
   
     protected async ngAfterViewInit(): Promise<void> {
         if (this.adEl) {
@@ -22,28 +34,38 @@ export class AdComponent {
     }
 
     public reload() {
-        window.SDG.cmd.push(function() {
-            SDG.Publisher.loadSlot("topmobile")
+        window.SDG.cmd.push(() => {
+            SDG.Publisher.loadSlot(this.slot)
         })
     }
 
     private loadAd(el: HTMLElement): void {
-        window.SDG.cmd.push(function() {
+        window.SDG.cmd.push(() => {
             console.log('Loading Ad');
             SDG.Publisher.setZone("homepage")
             SDG.Publisher.addKeyValue("demo", "uap")
-            const myAdSlot = SDG.Publisher.registerSlot('topmobile', el)
-            myAdSlot.configure({
-              reserveSpace: true,
-              fixedHeight: 150,
-              showAdvertLabel: true,
-              centerAds: true,
-              showLoadingAnimation: true,
-            });
-            myAdSlot.load()
-            SDG.Publisher.finalizeSlots()
+            SDG.Publisher.registerSlot(this.slot, el)
+                .configure(this.createAdConfig(this.slot))
           }
         );
+    }
+
+    private createAdConfig(slot: string): any {
+        const commonConfig = {
+            reserveSpace: true,
+            showAdvertLabel: true,
+            centerAds: true,
+            showLoadingAnimation: true,
+        }
+
+        if (slot === AdSlot.STICKYFOOTER) {
+            return {
+                ...commonConfig,
+                pinToBottom: true
+            }
+        }
+        
+        return commonConfig;
     }
 
     private registerMetatagEventHandlers(el: HTMLElement): void {
