@@ -53,6 +53,10 @@
     <platform name="ios">
         <preference name="deployment-target" value="12.0" />
         <preference name="SwiftVersion" value="5.3" />
+        <preference name="Scheme" value="httpsionic" />
+        <preference name="Hostname" value="mobile-sdk-cordova-test-app.com" />
+        <preference name="AdMobPlusWebViewAd" value="true" />
+        <preference name="AdMobPlusOverrideUrlLoading" value="true" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
