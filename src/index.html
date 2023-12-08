@@ -18,6 +18,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
+  <!-- JUST FOR TESTING, DO NOT USE-->
   <script type="text/javascript" src="https://cdn.stroeerdigitalgroup.de/metatag/libraries/cmp-mock.js"></script>
   <script>
     createCmpStub();
@@ -27,15 +28,14 @@
     var cmpMock = createCmpMock({cmpId: 6, acceptAll: true, uiVisible: false});
     cmpMock.isReady().then(() => console.log('CmpMock ready'));
   </script>
+  <!-- END -->
 
   <script>
     window.SDG = window.SDG || {};
     window.SDG.cmd = window.SDG.cmd || [];
   </script>
-  <!-- THIS METATAG SCRIPT WORKS FOR ANDROID -->
+  <!-- TESTING METATAG SCRIPT, DO NOT USE -->
   <script async type="text/javascript" src="https://cdn-test.stroeerdev.de/metatag/preview/sdkTest/metaTag.min.js"></script>
-  <!-- THIS IS ACTUAL PRODUCTION TRANSFERMARKET METATAG SCRIPT THAT WORKS FOR IOS BUT NOT FOR ANDROID -->
-  <!-- <script async type="text/javascript" src="https://cdn.stroeerdigitalgroup.de/metatag/live/transfermarkt.de_android/metaTag.min.js"></script> -->
 </head>
 
 <body>

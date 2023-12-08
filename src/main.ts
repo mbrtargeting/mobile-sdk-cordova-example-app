@@ -6,12 +6,12 @@ import { environment } from './environments/environment';
 import AdMob from 'admob-plus-cordova';
 
 declare global {
-  type Sdg = any;
   interface Window { 
-    SDG: Sdg; 
+    SDG: any; 
     showSdgDebug: () => void;
   }
-}
+  var SDG: Window['SDG']
+} 
 
 declare var admob: AdMob;
 

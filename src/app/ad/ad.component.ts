@@ -1,7 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from "@angular/core";
 
-declare var SDG: Sdg;
-
 enum AdSlot {
     TOPMOBILE = "topmobile",
     TOPMOBILE2 = "topmobile2",
@@ -29,7 +27,7 @@ export class AdComponent {
     protected async ngAfterViewInit(): Promise<void> {
         if (this.adEl) {
             this.registerMetatagEventHandlers(this.adEl.nativeElement);
-            this.loadAd(this.adEl.nativeElement)
+            this.registerAd(this.adEl.nativeElement)
         }
     }
 
@@ -39,7 +37,7 @@ export class AdComponent {
         })
     }
 
-    private loadAd(el: HTMLElement): void {
+    private registerAd(el: HTMLElement): void {
         window.SDG.cmd.push(() => {
             console.log('Loading Ad');
             SDG.Publisher.setZone("homepage")

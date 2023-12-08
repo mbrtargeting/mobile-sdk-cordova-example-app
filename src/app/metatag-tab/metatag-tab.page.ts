@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-declare var SDG: Sdg
-
 @Component({
   selector: 'app-matatag-tab',
   templateUrl: 'matatag-tab.page.html',
