@@ -54,6 +54,7 @@
     "cordova-plugin-ionic-webview": "^5.0.0",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-stroeer-ads-plugin": "file:../mobile-sdk-cordova-plugin",
     "eslint": "^7.26.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -83,7 +84,8 @@
         "USAGE": "This identifier will be used to deliver personalized ads to you.",
         "DISABLESDKCRASHREPORTING": "false"
       },
-      "admob-plus-cordova-webview-ad": {}
+      "admob-plus-cordova-webview-ad": {},
+      "cordova-plugin-stroeer-ads-plugin": {}
     },
     "platforms": [
       "ios",

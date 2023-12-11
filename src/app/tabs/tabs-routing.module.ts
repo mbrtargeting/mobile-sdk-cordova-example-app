@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('../metatag-tab/matatag-tab.module').then(m => m.MatatagTabPageModule)
       },
       {
+        path: 'interstitial',
+        loadChildren: () => import('../interstitial-tab/interstitial-tab.module').then(m => m.InterstitialTabPageModule)
+      },
+      {
         path: 'integration-test',
         loadChildren: () => import('../integration-test-tab/integration-test-tab.module').then(m => m.IntegrationTestTabPageModule)
       },
