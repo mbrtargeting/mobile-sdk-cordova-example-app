@@ -11,6 +11,7 @@ declare global {
     showSdgDebug: () => void;
   }
   var SDG: Window['SDG']
+  var stroeerAds: any;
 } 
 
 declare var admob: AdMob;
@@ -28,5 +29,6 @@ platformBrowserDynamic()
 function onDeviceRead() {
   document.addEventListener('deviceready', async () => {
     await admob.start(); // or start loading ads
+    await stroeerAds.init("appDfpTest")
   });
 }
