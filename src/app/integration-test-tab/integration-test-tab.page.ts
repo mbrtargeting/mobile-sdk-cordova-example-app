@@ -10,7 +10,6 @@ export class IntegrationTestTabPage implements OnInit {
 
   async ngOnInit(): Promise<void> {
     try {
-      await admob.WebViewAd.checkIntegration()
     } catch (err: unknown) {
       console.log("INTEGRATION ERROR", err)
     }

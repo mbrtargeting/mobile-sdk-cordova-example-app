@@ -11,6 +11,10 @@ export class InterstitialTabPage {
 
   constructor() {}
 
+  public async consent() {
+    await stroeerAds.consent()
+  }
+
   public async getInterstitialAd() {
     try {
       await stroeerAds.getInterstitial(InterstitialTabPage.INTERSTITIAL_SLOT)

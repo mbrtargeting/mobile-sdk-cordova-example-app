@@ -26,7 +26,22 @@
   </script>
   <script>
     var cmpMock = createCmpMock({cmpId: 6, acceptAll: true, uiVisible: false});
-    cmpMock.isReady().then(() => console.log('CmpMock ready'));
+    cmpMock.isReady().then(() => {
+      console.log('CmpMock ready')
+      window.__tcfapi('getInAppTCData', 2, (inAppTCData, success) => {
+        console.log("called tcfapi getinapptcdata")
+        if(success) {
+          console.log(JSON.stringify(inAppTCData, null, 2))
+          // do something with inAppTCData
+
+        } else {
+          console.log("NOT success")
+          // do something else
+
+        }
+
+      });
+    });
   </script>
   <!-- END -->
 

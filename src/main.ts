@@ -3,7 +3,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import AdMob from 'admob-plus-cordova';
 
 declare global {
   interface Window { 
@@ -13,8 +12,6 @@ declare global {
   var SDG: Window['SDG']
   var stroeerAds: any;
 } 
-
-declare var admob: AdMob;
 
 if (environment.production) {
   enableProdMode();
@@ -28,7 +25,7 @@ platformBrowserDynamic()
 
 function onDeviceRead() {
   document.addEventListener('deviceready', async () => {
-    await admob.start(); // or start loading ads
     await stroeerAds.init("appDfpTest")
   });
 }
+
