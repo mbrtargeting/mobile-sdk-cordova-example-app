@@ -23,7 +23,7 @@ export class AdComponent {
     public slot: string = AdSlot.TOPMOBILE;
 
     public adSlotEnum = AdSlot;
-  
+
     protected async ngAfterViewInit(): Promise<void> {
         if (this.adEl) {
             this.registerMetatagEventHandlers(this.adEl.nativeElement);
@@ -62,7 +62,7 @@ export class AdComponent {
                 pinToBottom: true
             }
         }
-        
+
         return commonConfig;
     }
 
