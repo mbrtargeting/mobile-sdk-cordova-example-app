@@ -20,7 +20,7 @@
     <preference name="SplashScreenDelay" value="3000" />
     <platform name="android">
         <preference name="Scheme" value="https" />
-        <preference name="Hostname" value="mobile-sdk-cordova-test-app.com" />
+        <preference name="Hostname" value="transfermarkt.de" />
         <preference name="AdMobPlusWebViewAd" value="true" />
         <preference name="AdMobPlusOverrideUrlLoading" value="true" />
         <preference name="GradlePluginKotlinEnabled" value="true" />
@@ -53,7 +53,7 @@
     <platform name="ios">
         <preference name="deployment-target" value="12.0" />
         <preference name="SwiftVersion" value="5.3" />
-        <preference name="Hostname" value="mobile-sdk-cordova-test-app.com" />
+        <preference name="Hostname" value="transfermarkt.de" />
         <preference name="AdMobPlusWebViewAd" value="true" />
         <preference name="AdMobPlusOverrideUrlLoading" value="true" />
         <allow-intent href="itms:*" />
