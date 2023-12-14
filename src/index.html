@@ -31,7 +31,14 @@
       window.__tcfapi('getInAppTCData', 2, (inAppTCData, success) => {
         console.log("called tcfapi getinapptcdata")
         if(success) {
-          console.log(JSON.stringify(inAppTCData, null, 2))
+          try {
+            setTimeout(() => {
+              console.log(JSON.stringify(inAppTCData, null, 2))
+              stroeerAds.consent(inAppTCData)
+            }, 500)
+          } catch (err) {
+            console.log("CONSENT ERROR", err)
+          }
           // do something with inAppTCData
 
         } else {
@@ -45,12 +52,12 @@
   </script>
   <!-- END -->
 
-  <script>
+  <!-- <script>
     window.SDG = window.SDG || {};
     window.SDG.cmd = window.SDG.cmd || [];
-  </script>
+  </script> -->
   <!-- TESTING METATAG SCRIPT, DO NOT USE -->
-  <script async type="text/javascript" src="https://cdn-test.stroeerdev.de/metatag/preview/sdkTest/metaTag.min.js"></script>
+  <!-- <script async type="text/javascript" src="https://cdn-test.stroeerdev.de/metatag/preview/sdkTest/metaTag.min.js"></script> -->
 </head>
 
 <body>
