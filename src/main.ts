@@ -44,6 +44,14 @@ function onDeviceRead() {
     await stroeerAds.init("appDfpTest");
     await stroeerAds.consent(tcfdata);
   });
+
+  //Test event stream from native
+  document.addEventListener('eventStreamInitialized', () => {
+    console.log('Event stream with Native initialized');
+  })
+  document.addEventListener('adLoaded', (ev) => {
+    console.log('Ad Loaded event', JSON.stringify(ev, null, 2));
+  })
 }
 
 function loadTestCMP(): Promise<TCFApi> {
