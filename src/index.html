@@ -22,11 +22,7 @@
   <script type="text/javascript" src="https://cdn.stroeerdigitalgroup.de/metatag/libraries/cmp-mock.js"></script>
   <script>
     createCmpStub();
-    console.log('CmpStub installed', !!window.__tcfapi);
-  </script>
-  <script>
-    var cmpMock = createCmpMock({cmpId: 6, acceptAll: true, uiVisible: false});
-    cmpMock.isReady().then(() => console.log('CmpMock ready'));
+    console.log('Test CMP installed', !!window.__tcfapi);
   </script>
   <!-- END -->
 

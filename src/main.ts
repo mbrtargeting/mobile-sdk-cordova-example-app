@@ -12,9 +12,19 @@ declare global {
   }
   var SDG: Window['SDG']
   var stroeerAds: any;
+
+  //CMP TEST: DO NOT USE
+  var createCmpMock: any;
+  var createCmpStub: any;
+  var __tcfapi: any;
 } 
 
 declare var admob: AdMob;
+
+type TCFData = any;
+interface TCFApi {
+  getInAppTCData: () => Promise<TCFData>
+}
 
 if (environment.production) {
   enableProdMode();
@@ -28,7 +38,34 @@ platformBrowserDynamic()
 
 function onDeviceRead() {
   document.addEventListener('deviceready', async () => {
-    await admob.start(); // or start loading ads
-    await stroeerAds.init("appDfpTest")
+    const tcfapi = await loadTestCMP();
+    const tcfdata = await tcfapi.getInAppTCData();
+    await admob.start();
+    await stroeerAds.init("appDfpTest");
+    await stroeerAds.consent(tcfdata);
   });
 }
+
+function loadTestCMP(): Promise<TCFApi> {
+  if (createCmpMock) {
+    return createCmpMock({cmpId: 6, acceptAll: true, uiVisible: false})
+      .isReady()
+      .then(() => console.log('Test CMP ready'))
+      .then(() => ({
+        getInAppTCData: (): Promise<TCFData> => new Promise((resolve, reject) => {
+          window.__tcfapi('getInAppTCData', 2, (inAppTCData: any, success: boolean) => {
+            console.log('getInAppTCData called');
+            if (success) {
+              resolve(inAppTCData);
+            } else {
+              reject(new Error("Failed to get InAppTCData"));
+            }
+          })
+        })
+      }));
+  }
+  
+  return Promise.reject(new Error("Test CMP not loaded: createCmpStub, createCmpMock functions are not available"));
+}
+
+

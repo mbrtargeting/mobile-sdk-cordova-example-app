@@ -21,14 +21,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/metatag',
+        redirectTo: '/tabs/interstitial',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/metatag',
+    redirectTo: '/tabs/interstitial',
     pathMatch: 'full'
   }
 ];
