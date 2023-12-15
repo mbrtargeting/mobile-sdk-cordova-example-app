@@ -11,8 +11,8 @@ export class InterstitialTabPage {
 
   constructor() {}
 
-  public async consent() {
-    await stroeerAds.consent()
+  public async openAdInspector() {
+    await stroeerAds.runAction('openAdInspector')
   }
 
   public async getInterstitialAd() {
