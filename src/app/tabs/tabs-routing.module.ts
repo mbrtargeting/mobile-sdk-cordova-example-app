@@ -12,8 +12,8 @@ const routes: Routes = [
         loadChildren: () => import('../metatag-tab/matatag-tab.module').then(m => m.MatatagTabPageModule)
       },
       {
-        path: 'interstitial',
-        loadChildren: () => import('../interstitial-tab/interstitial-tab.module').then(m => m.InterstitialTabPageModule)
+        path: 'stroeer-sdk',
+        loadChildren: () => import('../stroeer-sdk-tab/stroeer-sdk-tab.module').then(m => m.StroeerSdkTabPageModule)
       },
       {
         path: 'integration-test',
@@ -21,14 +21,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/interstitial',
+        redirectTo: '/tabs/stroeer-sdk',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/interstitial',
+    redirectTo: '/tabs/stroeer-sdk',
     pathMatch: 'full'
   }
 ];
