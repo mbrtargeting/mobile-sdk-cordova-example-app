@@ -6,6 +6,7 @@
   "scripts": {
     "rm-plugin": "cordova plugin remove cordova-plugin-stroeer-ads-plugin",
     "link-plugin": "cordova plugin add ../mobile-sdk-cordova-plugin --link --verbose",
+    "reload-plugin": "npm run rm-plugin && npm run link-plugin",
     "prepare:android": "cordova prepare platform android",
     "prepare:ios": "ionic cordova prepare ios",
     "run:android": "ionic cordova run android",
